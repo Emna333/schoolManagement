@@ -1,0 +1,24 @@
+<section class="news section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-title">
+					<h3 *ngIf="!studentId">Courses <span class="alternate">available</span></h3>
+					<h3 *ngIf="studentId">Teacher's <span class="alternate">courses</span></h3>
+					<h5 *ngIf="studentId">Choose a course to affect the student {{student.firstName}} in it</h5>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div *ngFor="let course of courses">
+				<div class="blog-post" style="margin-left: 30px;">
+					<div class=" col-md-12  col-12 m-auto">
+						<app-course [X]="course"></app-course>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>

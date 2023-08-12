@@ -1,0 +1,18 @@
+<section class="section pricing">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-title">
+					<h3>Our <span class="alternate">Teachers</span></h3>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+		
+			<div class="col-lg-4 col-md-6 m-auto"  *ngFor="let teacher of teachers">
+				<!-- Pricing Item -->
+				<app-teacher-card [C]="teacher"></app-teacher-card>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,58 @@
+<section class="page-title bg-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<div class="title">
+					<h3>Evaluate</h3>
+				</div>
+				<ol class="breadcrumb p-0 m-0">
+				  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+				  <li class="breadcrumb-item active">Evaluate</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--====  End of Page Title  ====-->
+
+
+<section class="section contact-form">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-title">
+					<h3>Evaluate <span class="alternate"> {{student.firstName}} {{student.lastName}}</span></h3>
+				</div>
+			</div>
+		</div>
+		<form [formGroup]="evaluationForm" class="row">
+			
+			<div class="col-md-12">
+				<input type="text" class="form-control main"  formControlName='rate' placeholder="Rate him/her">
+			</div>
+            <div *ngIf="evaluationForm.controls['rate'].invalid &&
+            (evaluationForm.controls['rate'].touched )">
+                <div style="color: red;" *ngIf="evaluationForm.controls['rate'].errors.required">
+                    Rate is required
+                </div>
+               
+            </div>
+			<div class="col-md-12">
+				<textarea  formControlName='evaluation' class="form-control main" rows="10" placeholder="Your Evaluation"></textarea>
+			</div>
+            <div *ngIf="evaluationForm.controls['evaluation'].invalid &&
+            (evaluationForm.controls['evaluation'].touched )">
+                <div style="color: red;" *ngIf="evaluationForm.controls['evaluation'].errors.required">
+                   Evaluation is required
+                </div>
+               
+            </div>
+
+			<div class="col-12 text-center">
+				<button type="submit" (click)='save()'  [disabled]="evaluationForm.invalid" class="btn btn-main-md">Save</button>
+			</div>
+            <p style="color: green;">{{msg}}</p>
+		</form>
+	</div>
+</section>

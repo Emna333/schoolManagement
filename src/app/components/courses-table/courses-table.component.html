@@ -1,0 +1,42 @@
+<table class="m-0 p-0 table">
+    <thead>
+        <tr class="table-light text-center"
+            style="color: #f4bf46bf; font-family: Montserrat, sans-serif; padding:30px;">
+            <td scope="col">Id</td>
+            <td scope="col"> Name</td>
+            <td scope="col">Description</td>
+            <td scope="col">Duration</td>
+            <td scope="col">Teacher's Name</td>
+            <td scope="col" class="text-center">Actions</td>
+
+        </tr>
+    </thead>
+    <!-- course Details -->
+    <tbody>
+        <tr class="table-light text-center" style="font-family: Montserrat, sans-serif" *ngFor="let course of courses">
+            <td>
+                <span class="time">{{course._id}}</span>
+            </td>
+            <td>
+                <!-- <img src="assets/images/speakers/speaker-tdumb-one.jpg" -->
+                <!-- alt="speaker-tdumb-one"> -->
+                <span class="name">{{course.name}}</span>
+            </td>
+            <td>
+
+                <span class="name">{{course.description}}</span>
+            </td>
+            <td>{{course.duration}}</td>
+            <td>{{course.teacherName}}</td>
+            <td>
+                <i class="material-icons" (click)='goToDisplay(course._id)' >cast</i>
+
+                <i class="material-icons" (click)='goToEdit(course._id)'
+                    style="color: rgba(255, 191, 0, 0.868);">edit</i>
+                    <span class="material-icons" (click)='delete(course._id)' style="color: red;"> delete </span>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>

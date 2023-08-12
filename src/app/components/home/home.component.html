@@ -1,0 +1,64 @@
+<app-banner></app-banner>
+
+
+<app-courses></app-courses>
+
+
+<div *ngIf="user && user.role=='parent'">
+    <app-parent-search></app-parent-search>
+</div>
+
+
+<app-students></app-students>
+
+
+
+<app-teachers-cards></app-teachers-cards>
+
+
+
+<app-signup-teacher></app-signup-teacher>
+
+
+
+
+
+
+<!--===========================================
+=            Call to Action Ticket            =
+============================================-->
+
+<app-go-to-signup-parent></app-go-to-signup-parent>
+
+<!--====  End of Call to Action Ticket  ====-->
+
+<!--==============================
+=            Sponsors            =
+===============================-->
+
+<app-sponsors></app-sponsors>
+
+<!--====  End of Sponsors  ====-->
+
+<!--================================
+=            News Posts            =
+=================================-->
+
+
+<!--====  End of News Posts  ====-->
+
+<!--==============================================
+=           Search         =
+===============================================-->
+
+<app-search></app-search>
+
+<!--====  End of  Search     ====-->
+
+<!--================================
+=            Google Map            =
+=================================-->
+
+<app-map></app-map>
+
+<!--====  End of Google Map  ====-->

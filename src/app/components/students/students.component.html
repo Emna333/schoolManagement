@@ -1,0 +1,24 @@
+<section class="section speakers bg-speaker overlay-lighter">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- Section Title -->
+				<div class="section-title white">
+					<h3>Our <span class="alternate">Students</span></h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div *ngFor="let student of students">
+				<div style="margin-left: -20px;" class="col-lg-12 col-md-12 col-sm-12">
+
+					<app-student [S]="student"></app-student>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</section>

@@ -1,0 +1,46 @@
+<table class="m-0 p-0 table">
+    <thead >
+        <tr  class="table-light text-center" style="color: #f4bf46bf; font-family: Montserrat, sans-serif; padding:30px;">
+                <td scope="col">Id</td>
+                <td scope="col">First Name</td>
+                <td scope="col">Last Name</td>
+                <td scope="col">Phone Number</td>
+                <td scope="col">Role</td>
+                <td scope="col">Status</td>
+                <td scope="col" class="text-center">Actions</td>
+        </tr>
+    </thead>
+    <!-- User Details -->
+    <tbody >
+        <tr class="table-light text-center" style="font-family: Montserrat, sans-serif" *ngFor="let user of users">
+            <td>
+                <span class="time">{{user._id}}</span>
+            </td>
+            <td>
+                <!-- <img src="assets/images/speakers/speaker-tdumb-one.jpg" -->
+                <!-- alt="speaker-tdumb-one"> -->
+                <span class="name">{{user.firstName}}</span>
+            </td>
+            <td >
+
+                <span class="name">{{user.lastName}}</span>
+            </td>
+            <td>{{user.phone}}</td>
+            <td>{{user.role}}</td>
+            <td>{{user.status}}</td>
+            <td>
+              
+                <i class="material-icons" (click)='goToDisplay(user._id)' >cast</i>
+
+                <span class="material-icons" (click)='delete(user._id)' style="color: red;"> person_remove </span>
+                <span class="material-icons"  *ngIf="user.role=='student'" (click)="goToTeachers(user._id)" style="color: rgb(255, 140, 0);"> label_important </span>
+
+                <span  *ngIf="user.status=='NOK'" class="material-icons" (click)="validateTeacher(user._id)" style="color: green;">
+                    done_outline
+                    </span>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>

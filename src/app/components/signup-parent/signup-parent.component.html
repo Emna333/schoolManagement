@@ -1,0 +1,114 @@
+<section class="page-title bg-title ">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="title">
+                    <h3>Signup as a Parent</h3>
+                </div>
+                <ol class="breadcrumb p-0 m-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Signup as a Parent</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section contact-form">
+    <div class="container">
+
+        <form [formGroup]="signupForm" class="row" style="color:red;">
+            <div class="col-md-6">
+                <input type="text" class="form-control main" id="Fname" formControlName='firstName'
+                    placeholder="First Name">
+                <div *ngIf="signupForm.controls['firstName'].invalid &&
+                (signupForm.controls['firstName'].touched || signupForm.controls['firstName'].dirty)">
+                    <div *ngIf="signupForm.controls['firstName'].errors.required">
+                        First Name is required
+                    </div>
+                    <div *ngIf="signupForm.controls['firstName'].errors.minlength">
+                        <!-- //minlength miniscule -->
+                        First Name should contain more than 3 caracters
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <input type="text" class="form-control main" id="Lname" formControlName='lastName'
+                    placeholder="Last Name">
+                <div *ngIf="signupForm.controls['lastName'].invalid &&
+                (signupForm.controls['lastName'].touched || signupForm.controls['lastName'].dirty)">
+                    <div *ngIf="signupForm.controls['lastName'].errors.required">
+                        Last Name is required
+                    </div>
+                    <div *ngIf="signupForm.controls['lastName'].errors.minlength">
+                        <!-- //minlength miniscule -->
+                        Last Name should contain more than 5 caracters
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+                <input type="email" class="form-control main" formControlName='email' placeholder="Email">
+                <div *ngIf="signupForm.controls['email'].invalid &&
+                (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
+                    <div *ngIf="signupForm.controls['email'].errors.required">
+                        Email is required
+                    </div>
+                    <div *ngIf="signupForm.controls['email'].errors.email">
+                        Email format is invalid
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input type="password" formControlName='pwd' class="form-control main" placeholder="Password">
+                <div *ngIf="signupForm.controls['pwd'].invalid &&
+                (signupForm.controls['pwd'].touched || signupForm.controls['pwd'].pattern)">
+                    <div *ngIf="signupForm.controls['pwd'].errors.required">
+                        Password is required
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control main" formControlName='phone' placeholder="Your  Phone number">
+                <div *ngIf="signupForm.controls['phone'].invalid &&
+                (signupForm.controls['phone'].touched || signupForm.controls['phone'].pattern)">
+                    <div *ngIf="signupForm.controls['phone'].errors.required">
+                        Phone number is required
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control main" formControlName='adress' id="adress" placeholder="Adress">
+                <div *ngIf="signupForm.controls['adress'].invalid &&
+                (signupForm.controls['adress'].touched || signupForm.controls['adress'].pattern)">
+                    <div *ngIf="signupForm.controls['adress'].errors.required">
+                        Adress is required
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 " style="margin-left: 300px;">
+                <input type="text" class="form-control main" formControlName='childPhone'
+                    placeholder="Your child's phone number">
+                <div *ngIf="signupForm.controls['childPhone'].invalid &&
+                (signupForm.controls['childPhone'].touched )">
+                    <div *ngIf="signupForm.controls['childPhone'].errors.required">
+                        Your child's phone number is required
+                    </div>
+                    <div *ngIf="signupForm.controls['childPhone'].errors.childPhoneExists">
+                        Child's phone number does not exist in the user collection.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 text-center">
+                <button type="submit" (click)='signup()' [disabled]="signupForm.invalid"
+                    class="btn btn-main-md">Signup</button>
+            </div>
+        </form>
+    </div>
+</section>

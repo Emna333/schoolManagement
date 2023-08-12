@@ -1,0 +1,41 @@
+<section class="page-title bg-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="title">
+                    <h3>{{title}}</h3>
+                </div>
+                <ol class="breadcrumb p-0 m-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">{{title}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section contact-form">
+    <div class="container">
+      
+        <form #addCourseForm="ngForm" (ngSubmit)="addOrEditCourse()"  class="row" style="color:red;">
+            <div class="col-md-6" style="margin-right: 200px;margin-left: 300px;">
+                <input type="text" class="form-control main" name="name"  [(ngModel)]='course.name'
+                    placeholder="Name">
+                
+            </div>
+
+            
+            <div class="col-md-6"  style="margin-right: 200px;margin-left: 300px;">
+                <input type="text" class="form-control main" name="description" [(ngModel)]='course.description'  placeholder="Description">
+             
+            </div>
+            <div class="col-md-6"  style="margin-right: 200px;margin-left: 300px;">
+                <input type="text" class="form-control main" name="duration" [(ngModel)]='course.duration'  placeholder="Duration">
+               
+            </div>
+           {{errorMsg}}
+            <div class="col-12 text-center">
+                <button type="submit"    class="btn btn-main-md">{{title}}</button>
+            </div>
+        </form>
+    </div>
+</section>

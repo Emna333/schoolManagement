@@ -1,0 +1,53 @@
+<section class="page-title bg-title ">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<div class="title">
+					<h3>Login</h3>
+				</div>
+				<ol class="breadcrumb p-0 m-0">
+					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item active">Login</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section contact-form">
+	<div class="container">
+
+		<form [formGroup]="loginForm" class="row" style="color: black;">
+			<div class="col-md-6" style="margin-right: 200px;margin-left: 300px;">
+				<input type="text" class="form-control main" formControlName='phone' id="phone"
+					placeholder="Phone Number">
+				<div *ngIf="loginForm.controls['phone'].invalid &&
+								(loginForm.controls['phone'].touched || loginForm.controls['phone'].pattern)">
+					<div *ngIf="loginForm.controls['phone'].errors.required">
+						Phone number is required
+					</div>
+
+
+				</div>
+			</div>
+			<div class="col-md-6" style="margin-right: 200px;margin-left: 300px;">
+				<input type="password" formControlName='pwd' class="form-control main" id="pwd" placeholder="Password">
+				<div *ngIf="loginForm.controls['pwd'].invalid &&
+								(loginForm.controls['pwd'].touched || loginForm.controls['pwd'].pattern)">
+					<div *ngIf="loginForm.controls['pwd'].errors.required">
+						Password is required
+					</div>
+
+
+				</div>
+			</div>
+
+			<p style="color: red;">{{errorMsg}}</p>
+
+			<div class="col-12 text-center">
+				<button type="submit" (click)='login()' [disabled]="loginForm.invalid" class="btn btn-main-md">Login
+				</button>
+			</div>
+		</form>
+	</div>
+
+</section>

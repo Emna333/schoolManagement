@@ -1,0 +1,43 @@
+<section class="section about">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-6 align-self-center">
+				<div class="image-block bg-about">
+					<img *ngIf="findedUser.role !=='student'" class="img-fluid" src="assets/images/speakers/single-speaker.jpg" alt="">
+					<img *ngIf="findedUser.role=='student'" class="img-fluid" src={{findedUser.img}} alt="">
+
+				</div>
+			</div>
+			<div class="col-lg-8 col-md-6 align-self-center">
+				<div class="content-block">
+					<h2>About our {{findedUser.role}} <span class="alternate">{{findedUser.firstName}}</span></h2>
+					<div class="description-one">
+						<h5> First Name: <span style="font-weight: 100;" >{{findedUser.firstName}}</span> </h5>
+
+					</div>
+					<div class="description-one">
+						<h5> Last Name: <span  style="font-weight: 100;">{{findedUser.lastName}}</span> </h5>
+
+					</div>
+					<div class="description-one">
+						<h5>	Email :  <span  style="font-weight: 100;">{{findedUser.email}}</span> </h5>
+					</div>
+					<div class="description-one">
+						<h5>	Adress :   <span  style="font-weight: 100;">{{findedUser.adress}}</span> </h5>
+					</div>
+					<div class="description-one">
+						<h5>	Phone Number : <span  style="font-weight: 100;">{{findedUser.phone}}</span> </h5>
+					</div>
+					<!-- <ul class="list-inline">
+						<li class="list-inline-item">
+							<a href="#" class="btn btn-main-md">Buy ticket</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="#" class="btn btn-transparent-md">Read more</a>
+						</li>
+					</ul> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

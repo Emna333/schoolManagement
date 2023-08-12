@@ -1,0 +1,25 @@
+<section class="cta-subscribe bg-subscribe overlay-dark">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 mr-auto">
+				<!-- Subscribe Content -->
+				<div class="content">
+					<h3>Search teacher <span class="alternate">By specialty</span></h3>
+				</div>
+			</div>
+			<div class="col-md-6 ml-auto align-self-center">
+				<!-- Subscription form -->
+				<form #searchForm="ngForm" (ngSubmit)="searchTeacher()" class="row">
+					<div class="col-lg-8 col-md-12">
+						<input type="text" class="form-control main white mb-lg-0" name="name"  [(ngModel)]='search.specialty' placeholder="Teacher's specialty">
+					</div>
+					<div class="col-lg-4 col-md-12">
+						<div class="subscribe-button">
+							<button class="btn btn-main-md">Search</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
